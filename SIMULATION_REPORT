@@ -1,1 +1,70 @@
+SIMULATION REPORT
+Pipeline Processor Design using Verilog HDL
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Objective
 
+To design and simulate a simple pipelined processor capable of demonstrating instruction flow through multiple pipeline stages using Verilog HDL.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Software Used
+
+Xilinx Vivado
+Verilog HDL
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Stages Implemented
+
+Instruction Fetch (IF)
+Instruction Decode (ID)
+Execute (EX)
+Write Back (WB)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Instructions Used
+
+Instruction		Operation
+
+03			ADD
+42			SUB
+85			LOAD
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Simulation Procedure
+
+The pipeline processor module was designed using Verilog HDL.
+A separate testbench was created to generate the clock signal for processor operation.
+Behavioral simulation was run in Xilinx Vivado.
+Waveforms were observed to verify correct movement of instructions through different pipeline stages.
+
+=========================================================================================================================================================
+Waveform Analysis
+
+The waveform shows the operation of the pipelined processor during different clock cycles. Initially, all pipeline registers contain zero values because the
+processor starts in an empty state. As the clock signal toggles, instructions are fetched sequentially from the instruction memory and move through different
+pipeline stages such as IF_ID, ID_EX, and EX_WB. The instruction 03 performs the ADD operation and produces the result 0F (decimal 15). 
+The instruction 42 performs the SUB operation and generates the result 05 (decimal 5). The instruction 85 performs the LOAD operation and loads the
+value 19 (decimal 25). The waveform also shows the program counter (pc) incrementing correctly, confirming proper instruction fetching and pipeline execution.
+Overall, the waveform verifies correct instruction flow, pipeline stage shifting, arithmetic execution, and write back operations in the processor.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Simulation Results
+
+Operation			Result
+
+ADD					    0F
+SUB				      05
+LOAD					  19
+Pipeline Register Transfer		Successful
+Clock Synchronization			Verified
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Result
+
+The pipeline processor was successfully designed and simulated using Verilog HDL. All instructions moved correctly through the pipeline stages 
+and produced the expected outputs during simulation.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Conclusion
+
+The project demonstrated the implementation of a basic pipelined processor using Verilog HDL. Simulation results verified correct instruction flow, 
+pipeline stage operation, arithmetic execution, and write back functionality through waveform analysis.
