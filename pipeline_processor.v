@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11.05.2026 21:54:31
-// Design Name: 
-// Module Name: pipeline_processor
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module pipeline_processor(
     input clk
 );
@@ -101,3 +80,27 @@ begin
 end
 
 endmodule
+
+//The pipeline_processor.v file contains the Verilog code for a simple pipelined processor design
+//The design uses a clock signal (clk) for synchronous processor operation.
+//Instruction memory is used to store sample processor instructions such as ADD, SUB, and LOAD.
+//Pipeline registers IF_ID, ID_EX, and EX_WB are used to represent different pipeline stages in the processor.
+//IF_ID stores instruction data between Instruction Fetch and Decode stages.
+//ID_EX stores instruction data between Decode and Execute stages.
+//EX_WB stores processed data before the Write Back stage.
+//A register file is used to store register values used during arithmetic operations.
+//The opcode register stores the operation type extracted from the instruction bits.
+//The result register stores the output generated during the Execute stage.
+//The program counter (pc) is used to fetch instructions sequentially from instruction memory.
+//The initial block initializes pipeline registers, instruction memory, program counter, and register values before simulation starts.
+//The always @(posedge clk) block indicates synchronous pipeline operation controlled by the clock signal.
+//During the Fetch stage, instructions are fetched from instruction memory using the program counter value.
+//The program counter increments after each instruction fetch operation.
+//During the Decode stage, the opcode is extracted from the instruction bits.
+//During the Execute stage, arithmetic or data operations are performed based on the opcode value using a case statement.
+//ADD operation performs addition between register values.
+//SUB operation performs subtraction between register values.
+//LOAD operation loads a constant value into the result register.
+//The EX_WB pipeline register stores the processed result before write back.
+//During the Write Back stage, the result is written into the register file.
+//The design demonstrates the basic working principle of a pipelined processor using Verilog HDL.
